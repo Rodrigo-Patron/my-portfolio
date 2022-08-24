@@ -1,13 +1,13 @@
 {
-  "name": "boilerplate",
+  "name": "my-portfolio",
   "version": "1.0.0",
-  "description": "This is a boilerplate",
+  "description": "This is my portfolio",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "rm -rf dist && parcel build src/index.html --public-url ./",
     "publish": "gh-pages -d dist"
   },
-  "author": "dci",
+  "author": "rp",
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",
