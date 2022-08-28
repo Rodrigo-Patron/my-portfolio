@@ -1,14 +1,14 @@
 {
-  "name": "my-portfolio",
+  "name": "rodrigo-portfolio",
   "version": "1.0.0",
-  "description": "This is my portfolio",
+  "description": "This is rodrigo's portfolio",
   "scripts": {
     "start": "parcel src/index.html",
     "build": "rm -rf dist && parcel build src/index.html --public-url ./",
     "publish": "gh-pages -d dist"
   },
-  "author": "rp",
-  "license": "ISC",
+  "author": "Rodrigo Patron",
+  "license": "MIT",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",
     "gh-pages": "^4.0.0",
