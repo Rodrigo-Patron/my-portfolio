@@ -7,15 +7,15 @@
     <script src="https://kit.fontawesome.com/f6adf96490.js"></script>
     <title>My Portfolio</title>
   </head>
-  <body>
+  <body id="home">
 
     <!-- NAV BAR -->
   
-      <nav>
-        <div class="menu">
-          <span>&#9776;</span>
+      <nav >
+        <div>
+          <span>&#9776;</span> 
           <ul>
-            <a href="#">
+            <a href="#home">
               <li>Home</li>
             </a>
             <a href="#about">
@@ -31,9 +31,12 @@
       <!-- HERO SECTION -->
  
       <header class="hero">
-                <h1 class="h1-hero">Hola! I am </h1>
-        <h1 class="h1-name"> Rodrigo <br>Patrón Flores</h1>
-        <h1 class="h1-hero">a  <span class="in-progress">Web-Developer </span>in progress</h1>
+        <div class="hero-text">
+          <h1 class="h1-hero">Hola! I am </h1>
+          <h1 class="h1-name"> Rodrigo <br>Patrón Flores</h1>
+          <h1 class="h1-hero">a  <span class="in-progress">Web-Developer </span>in progress</h1>
+      </div>
+      <img src="../../profile-pic (2).png" alt="Foto of Rodrigo Patron">
       </header>
   
       <!-- ABOUT SECTION -->
@@ -44,7 +47,7 @@
           <div class="info-about">
             <div class="info-about-me">
               <h3>Who am I?</h3>
-              <p>I am a mexican guy living in Germany. I have a Bachelor's degree in International Relations and experience in Global Commerce and Customer Service.</p>
+              <p>I am a mexican guy living in Germany. I have a Bachelor's degree in International Relations and experience in Commerce and Customer Service.</p>
             </div>
             <div class="info-about-me">
               <h3>Why development?</h3>
@@ -63,20 +66,23 @@
         </main>
 
         <!-- CONTACT SECTION -->
+
       <section class="contact" id="contact">
             <h2>Contact me</h2>
           <div class="icon-media">
-                       <a href="https://github.com/Rodrigo-Patron" target="_blank"></i><i class="fa-brands fa-github"></i></a>
+            <a href="https://github.com/Rodrigo-Patron" target="_blank"></i><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/rodrigo-patr%C3%B3n-flores-073375170/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
           </div>
-          <form >
+          <form  action="https://formspree.io/f/xayknabe"
+          method="POST" >
           <div class="input-name-email">
-                  <input type="text" id="name" minlength="2" placeholder="Full name" required>
+                <input type="text" id="name" minlength="2" placeholder="Full name" required>
                <input type="email" id="email" placeholder="Email" required>
           </div>
               <textarea name="message" id="message" cols="30" rows="5" placeholder="Message" required></textarea>
+                     <input class=btn type="submit" value="Send">
             </form>
-          <input class=btn type="submit" value="Send">
+ 
       </section> 
       
         
@@ -84,7 +90,7 @@
       <!-- FOOTER SECTION -->
   
       <footer>
-        <p>Copyright 2022</p>
+        <p>Rodrigo Patrón © 2022 </p>
       </footer>
   
 

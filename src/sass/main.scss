@@ -7,20 +7,29 @@ $color-black: #292828;
 $color-white: rgb(255, 255, 255);
 $color-gray: rgb(153, 153, 153);
 $color-green2: #9cc5a1;
-$color-green3: #d7e8ec;
+$color-green3: #bed6db;
+
+@mixin placeholder {
+  color: $color-green;
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
 
 body {
   background-color: $color-white;
-  margin: 2vh 18vw;
+  margin: 2vh 13vw;
   font-family: "Epilogue", sans-serif;
 }
 
 // NAV BAR
 
 nav {
+  background-color: rgb(255, 251, 251, 0.6);
   display: flex;
   justify-content: end;
   margin-bottom: 5rem;
+  position: sticky;
+  top: 0;
   span {
     font-size: 1.6rem;
     display: none;
@@ -47,7 +56,8 @@ nav {
     opacity: 0.8;
   }
   a:hover {
-    color: $color-gray;
+    color: $color-green;
+    opacity: 0.5;
   }
 }
 
@@ -55,24 +65,26 @@ nav {
 
 .hero {
   background-color: $color-white;
-  height: 30vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 5rem;
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
   .h1-name {
     font-size: 4.5rem;
     font-weight: bold;
     color: $color-green;
     text-shadow: 1px 1px 2px rgb(151, 151, 151);
-    margin-left: 10%;
   }
   .h1-hero {
     color: $color-green;
     font-size: 1.2rem;
     text-shadow: none;
-    margin-left: 10%;
   }
   .in-progress {
     color: $color-green2;
@@ -85,6 +97,9 @@ nav {
     50% {
       opacity: 0.4;
     }
+  }
+  img {
+    width: 18rem;
   }
 }
 
@@ -151,11 +166,11 @@ nav {
   }
   form {
     border-radius: 10px;
+    width: 80%;
     display: flex;
     flex-direction: column;
-    width: 80%;
-    margin: auto;
-    background-color: #d7e8ec;
+    justify-content: center;
+    background-color: rgb(214, 235, 217, 0.5);
     padding: 2rem 2rem;
 
     .input-name-email {
@@ -168,32 +183,29 @@ nav {
       color: $color-green;
       border: none;
       border-radius: 5px;
+      padding-left: 0.5rem;
     }
     input::placeholder {
-      color: $color-green;
-      opacity: 0.6;
-      font-size: 0.9rem;
+      @include placeholder;
     }
     input:focus {
       outline: none;
     }
-
     textarea {
       border: none;
       color: $color-green;
+      padding-left: 0.5rem;
       border-radius: 5px;
     }
     textarea::placeholder {
-      color: $color-green;
-      opacity: 0.6;
-      font-size: 0.9rem;
+      @include placeholder;
     }
     textarea:focus {
       outline: none;
     }
   }
   .btn {
-    margin: 2rem auto 0;
+    margin: 1rem auto 0;
     width: fit-content;
     background-color: $color-green;
     box-shadow: 0 0 2px $color-gray;
@@ -203,8 +215,7 @@ nav {
   }
   .btn:hover {
     color: $color-green;
-    background-color: #d7e8ec;
-    border: 1px solid#d7e8ec;
+    background-color: $color-green3;
   }
 }
 
@@ -222,7 +233,7 @@ footer {
 
 @media screen and (max-width: 1040px) {
   body {
-    margin: 2vh 13vw;
+    margin: 2vh 8vw;
   }
   nav {
     ul:last-child {
@@ -230,14 +241,22 @@ footer {
     }
   }
   .hero {
-    .h1-name {
-      font-size: 3.7rem;
+    .hero-text {
+      padding-right: 0;
+      z-index: 1;
+      .h1-name {
+        font-size: 3rem;
+        padding-right: 0;
+      }
+      .h1-hero {
+        font-size: 1rem;
+      }
+      .in-progress {
+        font-size: 1.5rem;
+      }
     }
-    .h1-hero {
-      font-size: 1.2rem;
-    }
-    .in-progress {
-      font-size: 1.7rem;
+    img {
+      width: 15rem;
     }
   }
   .contact {
@@ -267,7 +286,7 @@ footer {
 
 @media screen and (max-width: 767px) {
   body {
-    margin: 2vh 5vw;
+    margin: 0 3vw;
   }
   nav {
     margin-bottom: 1rem;
@@ -298,43 +317,44 @@ footer {
     .menu:hover ul {
       display: block;
       position: absolute;
-      right: 15;
+      right: 10;
       cursor: pointer;
+      background-color: rgb(214, 235, 217, 0.7);
+      border-radius: 4px;
     }
     li:hover {
-      color: $color-gray;
+      color: $color-green;
+
       transform: scale(1.2);
     }
   }
   .hero {
-    margin-bottom: 3rem;
-    .h1-name {
-      font-size: 3.1rem;
-      margin-left: 5%;
-    }
-    .h1-hero {
-      font-size: 0.9rem;
-      margin-left: 5%;
-    }
-    .in-progress {
-      font-size: 1.3rem;
-    }
-  }
-  .contact {
-    margin-bottom: 3rem;
-    h2 {
-      font-size: 2rem;
-    }
-    form {
-      input {
-        width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+
+    .hero-text {
+      padding-right: 0;
+      z-index: 1;
+
+      .h1-name {
+        font-size: 2.4rem;
       }
+      .h1-hero {
+        font-size: 0.7rem;
+      }
+      .in-progress {
+        font-size: 0.9rem;
+      }
+    }
+    img {
+      width: 10rem;
     }
   }
   .about {
     margin-bottom: 2rem;
     h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
+      padding-bottom: 2rem;
     }
     .info-about {
       width: 80%;
@@ -347,14 +367,25 @@ footer {
     h3 {
       width: 100%;
       text-align: center;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       padding-bottom: 0.2rem;
     }
     p {
       width: 85%;
       text-align: center;
-      font-size: 0.9rem;
-      padding-bottom: 1rem;
+      font-size: 0.8rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+  .contact {
+    margin-bottom: 3rem;
+    h2 {
+      font-size: 1.8rem;
+    }
+    form {
+      input {
+        width: 100%;
+      }
     }
   }
 }
