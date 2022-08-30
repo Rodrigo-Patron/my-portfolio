@@ -46,7 +46,6 @@ nav {
     list-style-type: none;
     padding: 1rem 1.2rem;
   }
-
   ul:last-child {
     padding-right: 20%;
   }
@@ -61,14 +60,14 @@ nav {
   }
 }
 
-//   HERO SECTION
+// HERO SECTION
 
 .hero {
   background-color: $color-white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 5rem;
+  margin-bottom: 7rem;
   .hero-text {
     display: flex;
     flex-direction: column;
@@ -105,10 +104,8 @@ nav {
 
 // ABOUT SECTION
 
-.about {
+.about-me {
   margin-bottom: 5rem;
-  text-align: center;
-
   h2 {
     font-size: 2.2rem;
     text-align: center;
@@ -116,26 +113,27 @@ nav {
     font-weight: bold;
     padding-bottom: 2.5rem;
   }
-  .info-about {
-    width: 60%;
+  .item-container {
+    width: 78%;
     margin: auto;
-  }
-  .info-about-me {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     align-items: center;
-    padding-bottom: 1rem;
-  }
-  h3 {
-    color: $color-green2;
-    font-weight: bold;
-    text-align: start;
-    width: 35%;
-  }
-  p {
-    color: $color-green;
-    width: 50%;
-    text-align: start;
+
+    h3 {
+      color: $color-green2;
+      font-weight: bold;
+    }
+    .line {
+      height: 100%;
+      width: 2px;
+      margin: auto;
+      background-color: rgb(214, 235, 217, 0.7);
+    }
+    p {
+      color: $color-green;
+    }
   }
 }
 
@@ -233,7 +231,7 @@ footer {
 
 @media screen and (max-width: 1040px) {
   body {
-    margin: 2vh 8vw;
+    margin: 1.5vh 8vw;
   }
   nav {
     ul:last-child {
@@ -264,22 +262,6 @@ footer {
       input {
         width: 100%;
       }
-    }
-  }
-  .about {
-    .info-about {
-      width: 75%;
-    }
-    .info-about-me {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    h3 {
-      width: 40%;
-    }
-    p {
-      width: 50%;
     }
   }
 }
@@ -324,7 +306,6 @@ footer {
     }
     li:hover {
       color: $color-green;
-
       transform: scale(1.2);
     }
   }
@@ -350,31 +331,32 @@ footer {
       width: 10rem;
     }
   }
-  .about {
-    margin-bottom: 2rem;
+  .about-me {
+    margin-bottom: 3rem;
     h2 {
       font-size: 1.8rem;
       padding-bottom: 2rem;
     }
-    .info-about {
-      width: 80%;
-      margin: auto;
-    }
-    .info-about-me {
+
+    .item-container {
       display: flex;
       flex-direction: column;
-    }
-    h3 {
-      width: 100%;
-      text-align: center;
-      font-size: 1.2rem;
-      padding-bottom: 0.2rem;
-    }
-    p {
-      width: 85%;
-      text-align: center;
-      font-size: 0.8rem;
-      padding-bottom: 0.5rem;
+
+      h3 {
+        font-size: 1.3rem;
+        padding-bottom: 0.2rem;
+      }
+      .line {
+        display: none;
+      }
+      p {
+        font-size: 0.8rem;
+        padding-bottom: 1rem;
+        text-align: justify;
+      }
+      p:last-child {
+        padding-bottom: 0;
+      }
     }
   }
   .contact {
